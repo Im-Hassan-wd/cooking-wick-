@@ -28,7 +28,10 @@
 </form>
 
 <script>
-  
+  const form = document.querySelector('form');
+  const addButton = document.querySelector('form .add');
+
+  addButton.addEventListener('submit', addIngrident)
 </script>
 
 <%- include('./partials/footer.ejs') %>
