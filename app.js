@@ -22,7 +22,7 @@ mongoose.connect(dbURI)
 // mongoose route
 app.get('/add-recipe', (req, res) => {
     const recipe = new Recipe({
-      title: 'Hot pizza',
+      title: 'new pizza',
       method: '12 gallons of water',
       ingrident: 'mushroom, hot-sauce, water',
       cookingTime: '12'
