@@ -213,7 +213,8 @@ button.submit {
   font-size: 1rem;
 }
 
-.not-found a {
+.not-found a,
+.delete {
   display: inline-block;
   padding: 7px;
   background: #fee996;
@@ -221,6 +222,7 @@ button.submit {
   margin-top: 20px;
   color: #343b46;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .not-found a:hover {

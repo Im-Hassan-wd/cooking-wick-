@@ -12,7 +12,17 @@
         <p><span>ingredients: </span><%- recipe.ingredient %></p>
         <p><span>method: </span><%- recipe.method %></p>
         <p><span>cooking time: </span><%- recipe.cookingTime %> minute(s)</p>
+        <a class="delete" data-id="<%= recipe._id %>">delete</a>
     </div>
 </div>
+
+<script>
+    const deleteBtn = document.querySelector('a.delete');
+
+    deleteBtn.addEventListener('click', (e) => {
+      const endpoint = `/recipes/${deleteBtn.dataset.id}`;
+      
+    })
+</script>
 
 <%- include('./partials/footer.ejs') %>
