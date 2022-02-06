@@ -191,6 +191,10 @@ button.submit {
   text-align: center;
 }
 
+.details p {
+  margin: 20px 0;
+}
+
 /* 404 page */
 .not-found h2 {
   color: #343b46;
