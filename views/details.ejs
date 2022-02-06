@@ -22,6 +22,9 @@
     deleteBtn.addEventListener('click', (e) => {
       const endpoint = `/recipes/${deleteBtn.dataset.id}`;
       
+      fetch(endpoint, {
+        method: 'DELETE'
+      });
     })
 </script>
 
