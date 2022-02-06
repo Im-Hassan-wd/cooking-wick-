@@ -65,7 +65,7 @@ h1 a {
 
 .recipe-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 40px;
   max-width: 1200px;
   margin: 40px auto;
@@ -184,13 +184,14 @@ button.submit {
 .details {
   background: #fff;
   max-width: 450px;
-  margin: 10px auto;
+  margin: 50px auto;
   border-radius: 5px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .details h2 {
-  margin: 20px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
