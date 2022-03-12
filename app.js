@@ -6,6 +6,6 @@ const app = express();
 // listen for requests
 app.listen(4002);
 
-app.get('/', (res, res) => {
+app.get('/', (req, res) => {
     res.send('hello world');
 });
