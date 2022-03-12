@@ -6,3 +6,8 @@
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
 }
+
+body {
+  background: #fafafa;
+  color: #222;
+}
