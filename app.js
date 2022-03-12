@@ -7,5 +7,9 @@ const app = express();
 app.listen(4002);
 
 app.get('/', (req, res) => {
-    res.send('hello world');
+    res.send('home');
+});
+
+app.get('/about', (req, res) => {
+    res.send('about');
 });
