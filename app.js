@@ -12,7 +12,7 @@ app.listen(4002);
 
 // middleware and static files
 app.use(express.static('public'));
-app.use(morgan(dev));
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home'});
