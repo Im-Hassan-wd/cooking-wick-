@@ -10,14 +10,14 @@ app.set('view engine', 'ejs');
 app.listen(4002);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { title: 'Home'});
 });
 
 app.get('/about', (req, res) => {
-    res.render('about');
+    res.render('about', { title: 'About'});
 });
 
 // 404
 app.get('/404', (req, res) => {
-    res.render('404');
+    res.render('404', { title: '404'});
 })
