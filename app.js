@@ -4,4 +4,8 @@ const express = require('express');
 const app = express();
 
 // listen for requests
-app.listen(4002)
+app.listen(4002);
+
+app.get('/', (res, res) => {
+    res.send('hello world');
+});
