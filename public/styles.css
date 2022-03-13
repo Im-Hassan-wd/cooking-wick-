@@ -22,9 +22,20 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul a {
+  color: #222;
+  text-decoration: none;
 }
 
 h1 a {
   color: #222;
   text-decoration: none;
+  font-size: 2rem;
 }
