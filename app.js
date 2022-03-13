@@ -15,6 +15,8 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
+    const recipes = [
+    ]
     res.render('index', { title: 'Home'});
 });
 
