@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
       {title: 'Pizza', ingrident: 'curry, hot sauce, mushroom'},
       {title: 'Pizza', ingrident: 'curry, mustad, mushroom'},
     ]
-    res.render('index', { title: 'Home'});
+    res.render('index', { title: 'Home', recipes});
 });
 
 app.get('/create', (req, res) => {
