@@ -16,9 +16,9 @@ app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
     const recipes = [
-      {title: 'Pizza', ingrident: 'curry, mustad, mushroom'},
-      {title: 'Pizza', ingrident: 'curry, hot sauce, mushroom'},
-      {title: 'Pizza', ingrident: 'curry, mustad, mushroom'},
+      {title: 'Pizza', cookingTime: '3', method: 'curry, mustad, mushroom'},
+      {title: 'Pizza', cookingTime: '38', method: 'curry, hot sauce, mushroom'},
+      {title: 'Pizza', cookingTime: '17', method: 'curry, mustad, mushroom'},
     ]
     res.render('index', { title: 'Home', recipes});
 });
