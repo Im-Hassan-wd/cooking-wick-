@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const Recipe = require('./models/recipe');
 
 // express app
 const app = express();
@@ -17,6 +18,16 @@ const dbURI = 'mongodb+srv://weird:test123@learningnode.meubb.mongodb.net/cookin
 mongoose.connect(dbURI)
  .then(result => app.listen(5000))
  .catch(err => console.log(err));
+
+// mongoose route
+app.get('/add-recipe', (req, res) => {
+    const recipe = new Recipe({
+      title: 'Hot pizza',
+      method: '12 gallons of water',
+      ingrident: 'mushroom, hot-sauce, water',
+      cookingTime: '12'
+    })
+})
 
 app.get('/', (req, res) => {
     const recipes = [
