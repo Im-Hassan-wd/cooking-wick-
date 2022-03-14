@@ -131,10 +131,12 @@ form .add {
 }
 
 .add button {
-  padding: 10px 12px;
+  padding: 12px 12px;
   border: 1px solid #fee996;
   background: #fee996;
+  border-radius: 4px;
   height: 100%;
+  margin-left: 5px;
 }
 
 input {
