@@ -19,7 +19,7 @@
       <input id="ingredient" type="text" name="ingredient">
       <button type="submit">Add</button>
     </div>
-    <div>Current ingrident:</div>
+    <div class="list">Current ingrident:</div>
     <label for="method">Recipe method:</label>
     <input type="text" name="method">
     <label for="cooking-time">Cooking time:</label>
@@ -31,15 +31,17 @@
   const form = document.querySelector('form');
   const addButton = document.querySelector('.add button');
   const ingredient = document.querySelector('#ingredient');
+  const ingredientList = document.querySelector('.list');
 
   console.log(addButton)
 
   addButton.addEventListener('click', (e) => {
     e.preventDefault();
-
-    let list = [];
-    list.push(ingredient.value);
-    console.log(list);
+    const lists = document.createElement('i');
+    lists.textContent = ingredient.value +', ';
+    ingredientList.append(lists);
+    // reset field
+    ingredient.value = '';
   })
 </script>
 
