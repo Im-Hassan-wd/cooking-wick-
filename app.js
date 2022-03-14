@@ -1,5 +1,5 @@
 const express = require('express');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 // express app
@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 // connect to db
 const dbURI = 'mongodb+srv://weird:test123@learningnode.meubb.mongodb.net/cooking-wick';
 mongoose.connect(dbURI)
- .then(result => app.listen(4002))
+ .then(result => app.listen(5000))
  .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
@@ -34,4 +34,4 @@ app.get('/create', (req, res) => {
 // 404
 app.get('/404', (req, res) => {
     res.render('404', { title: '404'});
-})
+});
