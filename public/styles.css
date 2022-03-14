@@ -12,6 +12,12 @@ body {
   color: #222;
 }
 
+header {
+  background: #343b46;
+  color: #fafafa;
+  padding: 10px 0;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -30,12 +36,19 @@ nav ul {
 }
 
 nav ul a {
-  color: #222;
+  color: #fafafa;
   text-decoration: none;
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+  padding: 7px 10px;
 }
 
+/* nav ul a:hover {
+  
+} */
+
 h1 a {
-  color: #222;
+  color: #fafafa;
   text-decoration: none;
   font-size: 2rem;
 }

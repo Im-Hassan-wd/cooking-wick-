@@ -1,4 +1,5 @@
 const express = require('express');
+const { default: mongoose } = require('mongoose');
 const morgan = require('morgan');
 
 // express app
@@ -13,6 +14,12 @@ app.listen(4002);
 // middleware and static files
 app.use(express.static('public'));
 app.use(morgan('dev'));
+
+// connect to db
+const dbURI = 'mongodb+srv://weird:test123@learningnode.meubb.mongodb.net/cooking-wick';
+mongoose.connect(dbURI)
+ .then(result => console.log('connected to db'))
+ .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
     const recipes = [
