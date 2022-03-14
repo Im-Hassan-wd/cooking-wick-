@@ -26,7 +26,11 @@ app.get('/add-recipe', (req, res) => {
       method: '12 gallons of water',
       ingrident: 'mushroom, hot-sauce, water',
       cookingTime: '12'
-    })
+    });
+
+    recipe.save()
+     .then(result => res.send(result))
+     .catch(err => console.log(err))
 })
 
 app.get('/', (req, res) => {
