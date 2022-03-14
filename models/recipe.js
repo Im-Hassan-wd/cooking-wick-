@@ -1,0 +1,20 @@
+const mongoose = require('mongoose');
+
+const recipeSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  method: {
+    type: String,
+    required: true
+  },
+  ingrident: {
+    type: String,
+    required: true
+  },
+  cookingTime: {
+    type: String,
+    required: true
+  }
+})
