@@ -14,9 +14,9 @@
 
     <label for="title">Recipe title:</label>
     <input type="text" name="title">
-    <label for="title">Recipe ingrident:</label>
+    <label for="title">Recipe ingredient:</label>
     <div class="add">
-      <input type="ingrident" name="ingrident">
+      <input id="ingredient" type="text" name="ingredient">
       <button>Add</button>
     </div>
     <div>Current ingrident:</div>
@@ -30,8 +30,13 @@
 <script>
   const form = document.querySelector('form');
   const addButton = document.querySelector('form .add');
+  const ingredient = document.querySelector('#ingredient');
 
-  addButton.addEventListener('submit', addIngrident)
+  addButton.addEventListener('submit', (e) => addIngrident(e))
+
+  function addIngrident(e) {
+    e.preventDefault();
+  }
 </script>
 
 <%- include('./partials/footer.ejs') %>
