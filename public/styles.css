@@ -137,6 +137,8 @@ form .add {
   border-radius: 4px;
   height: 100%;
   margin-left: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 input {
@@ -163,6 +165,7 @@ button.submit {
   display: block;
   padding: 10px 16px;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 /* footer styles */
