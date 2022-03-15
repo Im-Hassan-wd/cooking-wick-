@@ -45,6 +45,7 @@ app.get('/', (req, res) => {
 
 app.get('/create', (req, res) => {
   res.render('create', { title: 'Add new recipe'});
+  console.log(res.body);
 });
 
 // 404
