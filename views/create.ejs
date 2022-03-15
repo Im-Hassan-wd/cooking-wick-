@@ -23,7 +23,7 @@
     <label for="method">Recipe method:</label>
     <input type="text" name="method" required />
     <label for="cooking-time">Cooking time:</label>
-    <input type="text" name="cooking-time" required />
+    <input type="text" name="cookingTime" required />
     <button class="submit">submit</button>
 </form>
 
@@ -36,11 +36,22 @@
   // add ingredient
   addButton.addEventListener('click', (e) => {
     e.preventDefault();
-    // const lists = document.createElement('i');
-    // lists.textContent = ingredient.value +', ';
-    ingredientList.append(ingredient.value + ', ');
+
+    ingredientList.append(ingredient.value.trim() + ', ');
     // reset field
     ingredient.value = '';
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // get the values
+      const title = form.title.value;
+      const ingredient = ingredientList.textContent;
+      const method = form.method.value;
+      const cookingTime = form.cookingTime.value;
+
+      console.log()
+    })
   })
 </script>
 
