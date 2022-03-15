@@ -44,8 +44,7 @@ app.post('/', (req, res) => {
 });
 
 app.get('/recipe/:id', (req, res) => {
-  const id = res.params.id;
-  console.log(id);
+  const id = req.params.id;
 })
 
 app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
