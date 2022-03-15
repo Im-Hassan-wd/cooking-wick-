@@ -16,10 +16,10 @@
     <input type="text" name="title" required />
     <label for="title">Recipe ingredient:</label>
     <div class="add">
-      <input id="ingredient" type="text" name="ingredient" required />
+      <input id="ingredient" type="text" name="ingredient" />
       <button type="submit">Add</button>
     </div>
-    <div class="list">Current ingrident: </div>
+    <div class="list">Current ingrident: <i></i></div>
     <label for="method">Recipe method:</label>
     <input type="text" name="method" required />
     <label for="cooking-time">Cooking time:</label>
@@ -31,7 +31,7 @@
   const form = document.querySelector('form');
   const addButton = document.querySelector('.add button');
   const ingredient = document.querySelector('#ingredient');
-  const ingredientList = document.querySelector('.list');
+  const ingredientList = document.querySelector('.list i');
 
   // add ingredient
   addButton.addEventListener('click', (e) => {
@@ -50,7 +50,7 @@
       const method = form.method.value;
       const cookingTime = form.cookingTime.value;
 
-      console.log()
+      console.log(title, ingredient, method, cookingTime)
     })
   })
 </script>
