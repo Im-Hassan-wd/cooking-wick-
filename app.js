@@ -43,6 +43,11 @@ app.post('/', (req, res) => {
    .catch(err => console.log(err))
 });
 
+app.get('/recipe/:id', (req, res) => {
+  const id = res.params.id;
+  console.log(id);
+})
+
 app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
 
 // 404
