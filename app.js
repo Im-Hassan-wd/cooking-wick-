@@ -45,6 +45,11 @@ app.post('/', (req, res) => {
 
 app.get('/recipe/:id', (req, res) => {
   const id = req.params.id;
+  Recipe.findById(id)
+   .then(result => {
+    res.render('details', { title: 'Recipe details'})
+   })
+   .catch(err => console.log(err));
 })
 
 app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
