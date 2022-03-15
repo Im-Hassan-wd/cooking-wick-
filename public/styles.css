@@ -12,6 +12,14 @@ body {
   color: #222;
 }
 
+h1,
+h2,
+h3,
+p,
+a {
+  color: #343b46;
+}
+
 header {
   background: #343b46;
   color: #fafafa;
@@ -180,6 +188,15 @@ button.submit {
 
 .not-found p {
   font-size: 1rem;
+}
+
+.not-found a {
+  display: inline-block;
+  padding: 7px;
+  background: #fee996;
+  border-radius: 4px;
+  margin-top: 20px;
+  color: #343b46;
 }
 
 /* footer styles */
