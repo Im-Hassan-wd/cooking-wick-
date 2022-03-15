@@ -24,7 +24,7 @@ app.get('/add-recipe', (req, res) => {
     const recipe = new Recipe({
       title: 'new pizza',
       method: '12 gallons of water',
-      ingrident: 'mushroom, hot-sauce, water',
+      ingredient: 'mushroom, hot-sauce, water',
       cookingTime: '12'
     });
 
