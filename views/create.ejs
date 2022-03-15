@@ -41,7 +41,7 @@
     // reset field
     ingredient.value = '';
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       // get the values
@@ -50,7 +50,15 @@
       const method = form.method.value;
       const cookingTime = form.cookingTime.value;
 
-      console.log(title, ingredient, method, cookingTime)
+      try {
+        const result = await fetch('/signup', {
+          method: 'POST',
+          body: JSON.stringify({ title, ingredient, method,cookingTime })
+        })
+      }
+      catch(err) {
+        console.log(err)
+      }
     })
   })
 </script>
