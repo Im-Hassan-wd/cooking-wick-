@@ -1,4 +1,5 @@
 const express = require('express');
+const { result } = require('lodash');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const Recipe = require('./models/recipe');
@@ -22,8 +23,8 @@ mongoose.connect(dbURI)
 // mongoose route
 app.get('/add-recipe', (req, res) => {
     const recipe = new Recipe({
-      title: 'new pizza',
-      method: '12 gallons of water',
+      title: 'hot pizza',
+      method: 'hot sauce',
       ingredient: 'mushroom, hot-sauce, water',
       cookingTime: '12'
     });
@@ -31,7 +32,7 @@ app.get('/add-recipe', (req, res) => {
     recipe.save()
      .then(result => res.send(result))
      .catch(err => console.log(err))
-})
+});
 
 app.get('/', (req, res) => {
     const recipes = [
@@ -43,7 +44,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/create', (req, res) => {
-    res.render('create', { title: 'Add new recipe'});
+  res.render('create', { title: 'Add new recipe'});
 });
 
 // 404
