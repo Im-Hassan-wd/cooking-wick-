@@ -172,6 +172,15 @@ button.submit {
   cursor: pointer;
 }
 
+/* 404 page */
+.not-found h2 {
+  color: #343b46;
+  margin: 20px 0;
+}
+
+.not-found p {
+}
+
 /* footer styles */
 footer {
   text-align: center;
