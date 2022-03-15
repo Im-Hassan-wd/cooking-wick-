@@ -197,6 +197,11 @@ button.submit {
   border-radius: 4px;
   margin-top: 20px;
   color: #343b46;
+  text-decoration: none;
+}
+
+.not-found a:hover {
+  transform: rotate(2deg);
 }
 
 /* footer styles */
