@@ -37,14 +37,12 @@ app.get('/recipes', (req, res) => {
 app.post('/', (req, res) => {
   const recipe = new Recipe(req.body)
 
-  blog.save()
+  recipe.save()
    .then(result => res.redirect('/'))
    .catch(err => console.log(err))
 });
 
-app.get('/create', (req, res) => {
-  res.render('create', { title: 'Add new recipe'});
-});
+app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
 
 
 // 404
