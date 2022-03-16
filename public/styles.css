@@ -180,6 +180,17 @@ button.submit {
   cursor: pointer;
 }
 
+/* details page */
+.details {
+  background: #ddd;
+  max-width: 450px;
+  margin: 10px auto;
+}
+
+.details h2 {
+  text-align: center;
+}
+
 /* 404 page */
 .not-found h2 {
   color: #343b46;
