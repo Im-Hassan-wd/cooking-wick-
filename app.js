@@ -1,5 +1,4 @@
 const express = require('express');
-const { result } = require('lodash');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const Recipe = require('./models/recipe');
@@ -45,12 +44,22 @@ app.post('/', (req, res) => {
 
 app.get('/recipes/:id', (req, res) => {
   const id = req.params.id;
-  console.log("id=" + id)
+  
   Recipe.findById(id)
    .then(result => {
     res.render('details', { title: 'Recipe details', recipe: result})
    })
    .catch(err => console.log(err));
+});
+
+app.delete('/recipes/:id', (req, res) => {
+  const id = req.params.id;
+
+  Recipe.findByIdAndDelete(id)
+   .then(result => {
+     res.json({ redirect: '/' })
+   })
+   .catch(err => console.log(err))
 })
 
 app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
