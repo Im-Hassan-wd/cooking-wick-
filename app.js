@@ -18,9 +18,9 @@ app.use(morgan('dev'));
 app.listen(4001)
 // connect to db
 const dbURI = 'mongodb+srv://weird:test123@learningnode.meubb.mongodb.net/cooking-wick';
-// mongoose.connect(dbURI)
-//  .then(result => console.log('connected to db'))
-//  .catch(err => console.log(err));
+mongoose.connect(dbURI)
+ .then(result => console.log('connected to db'))
+ .catch(err => console.log('failed to connect to db'));
 
 app.get('/', (req, res) => {
   res.redirect('/recipes')
@@ -32,7 +32,7 @@ app.get('/recipes', (req, res) => {
      res.render('index', { title: 'Recipes', recipes: result});
    })
    .catch((err) => {
-     console.log(err);
+     res.render('error');
    })
 });
 
