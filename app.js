@@ -48,7 +48,7 @@ app.get('/recipes/:id', (req, res) => {
   console.log("id=" + id)
   Recipe.findById(id)
    .then(result => {
-    res.render('details', { title: 'Recipe details'})
+    res.render('details', { title: 'Recipe details', recipe: result})
    })
    .catch(err => console.log(err));
 })

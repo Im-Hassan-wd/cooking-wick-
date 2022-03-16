@@ -6,4 +6,13 @@
   </nav>
 </header>
 
+<div class="container details">
+    <h2><%- recipe.title %></h2>
+    <div class="content">
+        <p><%- recipe.ingredient %></p>
+        <p><%- recipe.method %></p>
+        <p><%- recipe.cookingTime %></p>
+    </div>
+</div>
+
 <%- include('./partials/footer.ejs') %>
