@@ -12,6 +12,7 @@ app.set('view engine', 'ejs');
 
 // middleware and static files
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true}));
 app.use(morgan('dev'));
 
 // connect to db
@@ -37,7 +38,7 @@ app.post('/recipes', (req, res) => {
   console.log(req.body)
 });
 
-app.get('recipes/create', (req, res) => {
+app.get('/create', (req, res) => {
   res.render('create', { title: 'Add new recipe'});
 });
 
