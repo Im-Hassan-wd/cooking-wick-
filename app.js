@@ -20,35 +20,27 @@ mongoose.connect(dbURI)
  .then(result => app.listen(4001))
  .catch(err => console.log(err));
 
-// mongoose route
-app.get('/add-recipe', (req, res) => {
-    const recipe = new Recipe({
-      title: 'hot pizza',
-      method: 'hot sauce',
-      ingredient: 'mushroom, hot-sauce, water',
-      cookingTime: '12'
-    });
-
-    recipe.save()
-     .then(result => res.send(result))
-     .catch(err => console.log(err))
-});
-
 app.get('/', (req, res) => {
-    const recipes = [
-      {title: 'Pizza', cookingTime: '3', method: 'curry, mustad, mushroom'},
-      {title: 'Pizza', cookingTime: '38', method: 'curry, hot sauce, mushroom'},
-      {title: 'Pizza', cookingTime: '17', method: 'curry, mustad, mushroom'},
-    ]
-    res.render('index', { title: 'Home', recipes});
+  res.redirect('/recipes')
+})
+app.get('/recipes', (req, res) => {
+  const recipes = [
+    {title: 'Pizza', cookingTime: '3', method: 'curry, mustad, mushroom'},
+    {title: 'Pizza', cookingTime: '38', method: 'curry, hot sauce, mushroom'},
+    {title: 'Pizza', cookingTime: '17', method: 'curry, mustad, mushroom'},
+  ]
+  res.render('index', { title: 'Home', recipes});
 });
 
 app.get('/create', (req, res) => {
   res.render('create', { title: 'Add new recipe'});
-  console.log(res.body);
+});
+
+app.post('/create', (req, res) => {
+  console.log(req.body)
 });
 
 // 404
 app.get('/404', (req, res) => {
-    res.render('404', { title: '404'});
+  res.render('404', { title: '404'});
 });

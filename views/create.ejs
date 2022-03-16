@@ -9,7 +9,7 @@
   </nav>
 </header>
 
-<form>
+<form action="/create" method="POST">
     <h2>Add Recipe</h2>
 
     <label for="title">Recipe title:</label>
@@ -17,7 +17,7 @@
     <label for="title">Recipe ingredient:</label>
     <div class="add">
       <input id="ingredient" type="text" name="ingredient" />
-      <button type="submit">Add</button>
+      <button>Add</button>
     </div>
     <div class="list">Current ingrident: <i></i></div>
     <label for="method">Recipe method:</label>
@@ -27,7 +27,7 @@
     <button class="submit">submit</button>
 </form>
 
-<script>
+<!-- <script>
   const form = document.querySelector('form');
   const addButton = document.querySelector('.add button');
   const ingredient = document.querySelector('#ingredient');
@@ -40,27 +40,30 @@
     ingredientList.append(ingredient.value.trim() + ', ');
     // reset field
     ingredient.value = '';
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // get the values
-      const title = form.title.value;
-      const ingredient = ingredientList.textContent;
-      const method = form.method.value;
-      const cookingTime = form.cookingTime.value;
-
-      try {
-        const result = await fetch('/signup', {
-          method: 'POST',
-          body: JSON.stringify({ title, ingredient, method,cookingTime })
-        })
-      }
-      catch(err) {
-        console.log(err)
-      }
-    })
   })
-</script>
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // get the values
+    const title = form.title.value.trim();
+    const ingredient = ingredientList.textContent;
+    const method = form.method.value.trim();
+    const cookingTime = form.cookingTime.value.trim();
+
+    // console.log(title, ingredient, method, cookingTime)
+
+    try {
+      const res = await fetch('/create', {
+        method: 'POST',
+        body: JSON.stringify({ title, ingredient, method, cookingTime }),
+        headers: { 'Content-Type': 'application/json'}
+      })
+    }
+    catch(err) {
+      console.log(err)
+    }
+})
+</script> -->
 
 <%- include('./partials/footer.ejs') %>
