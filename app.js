@@ -46,6 +46,6 @@ app.post('/', (req, res) => {
 app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
 
 // 404
-app.get('/404', (req, res) => {
-  res.render('404', { title: '404'});
+app.use((req, res) => {
+  res.status(404).render('404', { title: '404'});
 });
