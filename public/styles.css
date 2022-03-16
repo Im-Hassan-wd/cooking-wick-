@@ -73,6 +73,7 @@ h1 a {
   /* position: relative; */
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .recipe-list .card:hover {
