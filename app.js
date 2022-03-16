@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 // middleware and static files
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 
 // connect to db
 const dbURI = 'mongodb+srv://weird:test123@learningnode.meubb.mongodb.net/cooking-wick';
@@ -46,11 +46,11 @@ app.post('/', (req, res) => {
 app.get('/recipes/:id', (req, res) => {
   const id = req.params.id;
   console.log("id=" + id)
-  // Recipe.findById(id)
-  //  .then(result => {
-  //   res.render('details', { title: 'Recipe details'})
-  //  })
-  //  .catch(err => console.log(err));
+  Recipe.findById(id)
+   .then(result => {
+    res.render('details', { title: 'Recipe details'})
+   })
+   .catch(err => console.log(err));
 })
 
 app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
