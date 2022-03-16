@@ -35,7 +35,11 @@ app.get('/recipes', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  console.log(req.body)
+  const recipe = new Recipe(req.body)
+
+  blog.save()
+   .then(result => res.redirect('/'))
+   .catch(err => console.log(err))
 });
 
 app.get('/create', (req, res) => {
