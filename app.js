@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/recipes', (req, res) => {
-  Recipe.find()
+  Recipe.find().sort({ createdAt: -1})
    .then((result) => {
      res.render('index', { title: 'Recipes', recipes: result});
    })
