@@ -22,7 +22,8 @@ mongoose.connect(dbURI)
 
 app.get('/', (req, res) => {
   res.redirect('/recipes')
-})
+});
+
 app.get('/recipes', (req, res) => {
   const recipes = [
     {title: 'Pizza', cookingTime: '3', method: 'curry, mustad, mushroom'},
@@ -32,13 +33,14 @@ app.get('/recipes', (req, res) => {
   res.render('index', { title: 'Home', recipes});
 });
 
-app.get('/create', (req, res) => {
+app.post('/recipes', (req, res) => {
+  console.log(req.body)
+});
+
+app.get('recipes/create', (req, res) => {
   res.render('create', { title: 'Add new recipe'});
 });
 
-app.post('/create', (req, res) => {
-  console.log(req.body)
-});
 
 // 404
 app.get('/404', (req, res) => {
