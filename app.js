@@ -26,12 +26,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/recipes', (req, res) => {
-  const recipes = [
-    {title: 'Pizza', cookingTime: '3', method: 'curry, mustad, mushroom'},
-    {title: 'Pizza', cookingTime: '38', method: 'curry, hot sauce, mushroom'},
-    {title: 'Pizza', cookingTime: '17', method: 'curry, mustad, mushroom'},
-  ]
-  res.render('index', { title: 'Home', recipes});
+  Recipe.find()
+   .then((result) => {
+     res.render('index', { title: 'Recipes', recipes: result});
+   })
+   .catch((err) => {
+     console.log(err);
+   })
 });
 
 app.post('/', (req, res) => {
