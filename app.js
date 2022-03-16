@@ -34,7 +34,7 @@ app.get('/recipes', (req, res) => {
   res.render('index', { title: 'Home', recipes});
 });
 
-app.post('/recipes', (req, res) => {
+app.post('/', (req, res) => {
   console.log(req.body)
 });
 
