@@ -24,6 +24,14 @@ app.get('/', (req, res) => {
   res.redirect('/recipes')
 });
 
+app.post('/', (req, res) => {
+  const recipe = new Recipe(req.body)
+
+  recipe.save()
+   .then(result => res.redirect('/'))
+   .catch(err => console.log(err))
+});
+
 app.get('/recipes', (req, res) => {
   Recipe.find().sort({ createdAt: -1})
    .then((result) => {
@@ -32,14 +40,6 @@ app.get('/recipes', (req, res) => {
    .catch((err) => {
      res.render('error');
    })
-});
-
-app.post('/', (req, res) => {
-  const recipe = new Recipe(req.body)
-
-  recipe.save()
-   .then(result => res.redirect('/'))
-   .catch(err => console.log(err))
 });
 
 app.get('/recipes/:id', (req, res) => {
