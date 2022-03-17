@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const Recipe = require('./models/recipe');
+const recipeRoutes = require('./routes/recipeRoutes');
 
 // express app
 const app = express();
@@ -24,46 +24,10 @@ app.get('/', (req, res) => {
   res.redirect('/recipes')
 });
 
-app.post('/', (req, res) => {
-  const recipe = new Recipe(req.body)
-
-  recipe.save()
-   .then(result => res.redirect('/'))
-   .catch(err => console.log(err))
-});
-
 // recipe routes
-app.get('/recipes', (req, res) => {
-  Recipe.find().sort({ createdAt: -1})
-   .then((result) => {
-     res.render('index', { title: 'Recipes', recipes: result});
-   })
-   .catch((err) => {
-     res.render('error');
-   })
-});
+app.use(recipeRoutes);
 
-app.get('/recipes/:id', (req, res) => {
-  const id = req.params.id;
-  
-  Recipe.findById(id)
-   .then(result => {
-    res.render('details', { title: 'Recipe details', recipe: result})
-   })
-   .catch(err => console.log(err));
-});
-
-app.delete('/recipes/:id', (req, res) => {
-  const id = req.params.id;
-
-  Recipe.findByIdAndDelete(id)
-   .then(result => {
-     res.json({ redirect: '/' })
-   })
-   .catch(err => console.log(err))
-})
-
-app.get('/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
+app.get('/recipes/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
 
 // 404
 app.use((req, res) => {

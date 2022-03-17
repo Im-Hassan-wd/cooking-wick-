@@ -1,4 +1,5 @@
 const express = require('express');
+const Recipe = require('../models/recipe');
 
 const router = express.Router();
 
@@ -10,6 +11,14 @@ router.get('/recipes', (req, res) => {
    .catch((err) => {
      res.render('error');
    })
+});
+
+router.post('/recipes', (req, res) => {
+  const recipe = new Recipe(req.body)
+
+  recipe.save()
+   .then(result => res.redirect('/'))
+   .catch(err => console.log(err))
 });
 
 router.get('/recipes/:id', (req, res) => {
@@ -30,4 +39,6 @@ router.delete('/recipes/:id', (req, res) => {
      res.json({ redirect: '/' })
    })
    .catch(err => console.log(err))
-})
+});
+
+module.exports = router;
