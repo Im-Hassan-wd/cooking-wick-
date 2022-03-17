@@ -21,6 +21,8 @@ router.post('/recipes', (req, res) => {
    .catch(err => console.log(err))
 });
 
+router.get('/recipes/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
+
 router.get('/recipes/:id', (req, res) => {
   const id = req.params.id;
   

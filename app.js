@@ -27,8 +27,6 @@ app.get('/', (req, res) => {
 // recipe routes
 app.use(recipeRoutes);
 
-app.get('/recipes/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
-
 // 404
 app.use((req, res) => {
   res.status(404).render('404', { title: '404'});
