@@ -32,6 +32,7 @@ app.post('/', (req, res) => {
    .catch(err => console.log(err))
 });
 
+// recipe routes
 app.get('/recipes', (req, res) => {
   Recipe.find().sort({ createdAt: -1})
    .then((result) => {
