@@ -44,17 +44,18 @@ nav ul {
 }
 
 nav ul a {
+  display: inline-block;
   color: #fafafa;
   text-decoration: none;
   border: 1px solid #fafafa;
   border-radius: 5px;
   padding: 7px 10px;
-  transform: rotate(1deg);
+  transition: 0.3s ease;
 }
 
-/* nav ul a:hover {
-  
-} */
+nav ul a:hover {
+  transform: rotate(2deg);
+}
 
 h1 a {
   color: #fafafa;
