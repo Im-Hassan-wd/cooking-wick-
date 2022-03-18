@@ -1,16 +1,9 @@
 const express = require('express');
-const Recipe = require('../models/recipe');
 
 const router = express.Router();
 
 router.get('/recipes', (req, res) => {
-  Recipe.find().sort({ createdAt: -1})
-   .then((result) => {
-     res.render('index', { title: 'Recipes', recipes: result});
-   })
-   .catch((err) => {
-     res.render('error');
-   })
+  
 });
 
 router.post('/recipes', (req, res) => {
