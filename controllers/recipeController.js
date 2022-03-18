@@ -33,9 +33,20 @@ const recipe_create_post = (req, res) => {
    .catch(err => console.log(err))
 }
 
+const recipe_delete = (req, res) => {
+  const id = req.params.id;
+
+  Recipe.findByIdAndDelete(id)
+   .then(result => {
+     res.json({ redirect: '/' })
+   })
+   .catch(err => console.log(err))
+}
+
 module.exports = {
   recipe_get,
   recipe_details_get,
   recipe_create_get,
-  recipe_create_post  
+  recipe_create_post,
+  recipe_delete  
 }
