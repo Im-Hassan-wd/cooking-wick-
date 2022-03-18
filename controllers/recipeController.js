@@ -25,8 +25,17 @@ const recipe_create_get = (req, res) => {
   res.render('create', { title: 'Add new recipe'})
 }
 
+const recipe_create_post = (req, res) => {
+  const recipe = new Recipe(req.body)
+
+  recipe.save()
+   .then(result => res.redirect('/'))
+   .catch(err => console.log(err))
+}
+
 module.exports = {
   recipe_get,
   recipe_details_get,
-  recipe_create_get  
+  recipe_create_get,
+  recipe_create_post  
 }

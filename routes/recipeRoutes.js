@@ -4,13 +4,7 @@ const router = express.Router();
 
 router.get('/recipes', recipeController.recipe_get);
 
-router.post('/recipes', (req, res) => {
-  const recipe = new Recipe(req.body)
-
-  recipe.save()
-   .then(result => res.redirect('/'))
-   .catch(err => console.log(err))
-});
+router.post('/recipes', recipeController.recipe_create_post);
 
 router.get('/recipes/create', recipeController.recipe_create_get);
 
