@@ -7,7 +7,7 @@ const recipe_get = (req, res) => {
      res.render('index', { title: 'Recipes', recipes: result});
    })
    .catch((err) => {
-     res.render('error');
+     console.log(err);
    })
 }
 
