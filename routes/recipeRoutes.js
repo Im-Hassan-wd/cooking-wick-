@@ -1,10 +1,8 @@
 const express = require('express');
-
+const recipeContoller = require('../controllers/recipeController');
 const router = express.Router();
 
-router.get('/recipes', (req, res) => {
-  
-});
+router.get('/recipes', recipeContoller.recipe_get);
 
 router.post('/recipes', (req, res) => {
   const recipe = new Recipe(req.body)

@@ -10,3 +10,7 @@ const recipe_get = (req, res) => {
      res.render('error');
    })
 }
+
+module.exports = {
+  recipe_get
+}
