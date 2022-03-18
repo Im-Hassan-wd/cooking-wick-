@@ -1,8 +1,8 @@
 const express = require('express');
-const recipeContoller = require('../controllers/recipeController');
+const recipeController = require('../controllers/recipeController');
 const router = express.Router();
 
-router.get('/recipes', recipeContoller.recipe_get);
+router.get('/recipes', recipeController.recipe_get);
 
 router.post('/recipes', (req, res) => {
   const recipe = new Recipe(req.body)
@@ -12,17 +12,9 @@ router.post('/recipes', (req, res) => {
    .catch(err => console.log(err))
 });
 
-router.get('/recipes/create', (req, res) => res.render('create', { title: 'Add new recipe'}));
+router.get('/recipes/create', recipeController.recipe_create_get);
 
-router.get('/recipes/:id', (req, res) => {
-  const id = req.params.id;
-  
-  Recipe.findById(id)
-   .then(result => {
-    res.render('details', { title: 'Recipe details', recipe: result})
-   })
-   .catch(err => console.log(err));
-});
+router.get('/recipes/:id', recipeController.recipe_details_get);
 
 router.delete('/recipes/:id', (req, res) => {
   const id = req.params.id;
