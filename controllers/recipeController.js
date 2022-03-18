@@ -18,7 +18,9 @@ const recipe_details_get = (req, res) => {
    .then(result => {
     res.render('details', { title: 'Recipe details', recipe: result})
    })
-   .catch(err => console.log(err));
+   .catch(err => {
+     res.status(404).render('404', { title: 'Recipe not found'})
+   });
 }
 
 const recipe_create_get = (req, res) => {
