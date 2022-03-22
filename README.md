@@ -40,3 +40,33 @@
 - view exciting recipes
 - delete recipes
 - view recipe details
+
+## How to set up
+
+To start using this app you must have node install
+
+### Getting started 
+
+#### install all dependencies and get the node_modules folder
+`npm install`
+
+### Connect to MongoDB database
+- create a free mongoodb account
+- create a new cluster
+- connect to cluster ( copy your connection string )
+- go to the app.js file and past your connection string beneath the connect to db comment
+
+
+#### serve up node js app. It listens on localhost:4001
+`node app`
+
+- or use nodemon if you have it installed
+- how to install nodemon
+`npm install nodemon -g`
+
+#### serve up node js app. It listens on localhost:4001
+`nodemon app`
+
+
+
+
