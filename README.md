@@ -41,14 +41,14 @@
 - delete recipes
 - view recipe details
 
-## How to set up
+## Getting started
 
 To start using this app you must have node install
 
-### Getting started 
-
 #### install all dependencies and get the node_modules folder
-`npm install`
+`
+npm install
+`
 
 ### Connect to MongoDB database
 - create a free mongoodb account
@@ -58,11 +58,16 @@ To start using this app you must have node install
 
 
 #### serve up node js app. It listens on localhost:4001
-`node app`
+`
+node app
+`
 
 - or use nodemon if you have it installed
 - how to install nodemon
-`npm install nodemon -g`
+
+`
+npm install nodemon -g
+`
 
 #### serve up node js app. It listens on localhost:4001
 `nodemon app`
