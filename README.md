@@ -45,7 +45,7 @@
 
 To start using this app you must have node install
 
-`bash
+``` bash
 
 # install all dependencies and get the node_modules folder
 
@@ -69,7 +69,8 @@ $ npm install nodemon -g
 
 # serve up node js app. It listens on localhost:4001
 $ nodemon app
-`
+
+```
 
 
 
