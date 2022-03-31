@@ -45,32 +45,31 @@
 
 To start using this app you must have node install
 
-#### install all dependencies and get the node_modules folder
-`
-npm install
-`
+`bash
 
-### Connect to MongoDB database
+# install all dependencies and get the node_modules folder
+
+$ npm install
+
+#Connect to MongoDB database
 - create a free mongoodb account
 - create a new cluster
 - connect to cluster ( copy your connection string )
 - go to the app.js file and past your connection string beneath the connect to db comment
 
 
-#### serve up node js app. It listens on localhost:4001
-`
-node app
-`
+#serve up node js app. It listens on localhost:4001
 
-- or use nodemon if you have it installed
-- how to install nodemon
+$node app
 
-`
-npm install nodemon -g
-`
+# or use nodemon if you have it installed
+# how to install nodemon
+$ npm install nodemon -g
 
-#### serve up node js app. It listens on localhost:4001
-`nodemon app`
+
+# serve up node js app. It listens on localhost:4001
+$ nodemon app
+`
 
 
 
